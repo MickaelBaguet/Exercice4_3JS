@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 4</title>
+</head>
+<body>
+  <form>
+    <label for="password">Votre mot de passe : </label><input type="text" name="password" id="password" />
+    <label for="confirmPassword">Confirmez : </label><input type="text" name="confirmPassword" id="confirmPassword" />
+    <button type="button" name="button" id="valid">Vérification</button>
+  </form>
+  <script type="text/javascript">
+    // En cliquant sur l'id 'valid' on lance la fonction :
+    document.getElementById('valid').addEventListener('click', function()
+    {
+      // alert de test :
+      // alert("Test");
+      // alert(document.getElementById('password').value);
+      // alert(document.getElementById('confirmPassword').value);
+      // Si la valeur de l'id 'password' est égale à la valeur de l'id 'confirmPassword'
+      if (document.getElementById('password').value == document.getElementById('confirmPassword').value)
+      {
+        // alert("Valide");
+        // getElementsByTagName crée une de noeud avec les éléments en question
+        // Pour chaque tag input de la liste on va appliquer le changement de couleur vert en cas de d'égalité
+        for (var i = 0; i < document.getElementsByTagName("input").length; i++)
+        {
+          document.getElementsByTagName("input")[i].style.borderColor = "green";
+        }
+        // Méthode pour le changement de couleur cas par cas
+        // document.getElementById('password').style.borderColor = "green";
+        // document.getElementById('confirmPassword').style.borderColor = "green";
+      }
+      else
+      {
+        // alert("Non valide");
+        // Pour chaque tag input de la liste on va appliquer le changement de couleur rouge en cas de d'inégalité
+        for (var i = 0; i < document.getElementsByTagName("input").length; i++)
+        {
+          document.getElementsByTagName("input")[i].style.borderColor = "red";
+        }
+        // Méthode pour le changement de couleur cas par cas
+        // document.getElementById('password').style.borderColor = 'red';
+        // document.getElementById('confirmPassword').style.borderColor = 'red';
+      }
+    });
+
+  </script>
+
+</body>
+</html>
